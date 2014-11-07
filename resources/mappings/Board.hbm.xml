@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.multicampus.biz.board.vo">
+
+	<class name="BoardVO" table="BOARD">
+		<id name="seq" column="SEQ" type="int">
+			<generator class="sequence">
+				<param name="sequence">BOARD_SEQ</param>
+			</generator>
+		</id>
+		<property name="title" column="TITLE" type="string" />
+		<property name="writer" column="WRITER" type="string" />
+		<property name="content" column="CONTENT" type="string" />
+		<property name="regDate" column="REGDATE" type="date" />
+		<property name="cnt" column="CNT" type="int" />
+	</class>
+
+</hibernate-mapping>
+
+

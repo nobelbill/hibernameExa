@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+ "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Hibernate를 위한 설정들 -->
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@localhost:1521:xe
+		</property>
+		<property name="hibernate.connection.username">hr</property>
+		<property name="hibernate.connection.password">hr</property>
+		<property name="hibernate.connection.pool_size">1</property>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.Oracle10gDialect
+		</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.cache.provider_class"> 
+			org.hibernate.cache.NoCacheProvider
+		</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- mapping 파일 등록 -->
+		<mapping resource="mappings/Board.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
